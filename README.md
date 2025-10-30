@@ -30,6 +30,7 @@ bash
 Copy code
 pip install -r requirements.txt
 python rsm_ping.py --host 8.8.8.8 --count 150 --threshold 0.01 --plot 1
+
 Dependencies
 
 numpy
