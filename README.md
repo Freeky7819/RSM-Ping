@@ -21,6 +21,7 @@ When the system reaches a *resonant stillness*, latency variations become cohere
 ---
 
 ## ⚙️ Installation
+
 ```bash
 pip install rsm_ping
 or from a local clone:
@@ -29,59 +30,55 @@ bash
 Copy code
 pip install -r requirements.txt
 python rsm_ping.py --host 8.8.8.8 --count 150 --threshold 0.01 --plot 1
-Dependencies:
+Dependencies
 
-nginx
-Copy code
 numpy
+
 matplotlib
+
 🚀 Quick Examples
 Real network measurement
+
 bash
 Copy code
 rsm-ping --host 8.8.8.8 --count 150 --threshold 0.01 --adaptive 1 --plot 1
 Synthetic resonance mode
+
 bash
 Copy code
 rsm-ping --mode synthetic --simulate resonant --count 200 --threshold 0.01 --plot 1
-Outputs:
+Outputs
 
 results/*.csv — latency + metric summary
 
 results/*.png — 4-panel chart: RTT, jitter variance, H/D evolution, R score
 
-## 🧠 Method (in short)
+🧠 Method (in short)
+Compute jitter variance and stillness
+S = exp( -σ² / θ )
 
-1. **Compute jitter variance and stillness**
+Estimate spectral entropy
+H = normalized entropy of FFT(ΔRTT)
 
-   S = exp( -σ² / θ )
+Find autocorrelation decay
+D = normalized time when autocorrelation drops to 10% of peak
 
-2. **Estimate spectral entropy**
+Combine harmonically
+R = ( S · (1 − H) · (1 − D) )^(1/3)
 
-   H = normalized entropy of FFT(ΔRTT)
+⚡️ PRO / SDK Edition
+The RSM-Ping PRO Edition extends Open with:
 
-3. **Find autocorrelation decay**
+Real-time live dashboard (Gradio UI)
 
-   D = time (normalized) when autocorrelation drops to 10 % of peak
+Structured JSON export for ROC / ISM-X
 
-4. **Combine harmonically**
+SDK hooks for adaptive agents & network analytics
 
-   R = ( S · (1 − H) · (1 − D) )^(1/3)
- 
+Optional Harmonic Logs (audit & provenance)
 
-When R → 1, the system operates near perfect coherence —
-When R → 0, it’s dominated by random noise.
+For collaboration or licensing inquiries:
+📧 zakelj.damjan@gmail.com
 
-🧩 Example (PowerShell)
-powershell
-Copy code
-# Real measurement with plot + CSV
-rsm-ping --host 1.1.1.1 --count 120 --threshold 0.01 --plot 1
-
-# Adaptive threshold (25th percentile × factor)
-rsm-ping --host 8.8.4.4 --count 200 --adaptive 1 --factor 1.5 --plot 1
-
-# Synthetic "resonant" test
-rsm-ping --mode synthetic --simulate resonant --count 200 --plot 1
-📄 License
-Apache-2.0 © Freedom (Damjan Žakelj), 2025
+Open Edition = free scientific tool.
+PRO Edition = research-grade SDK with live resonance analytics.
