@@ -63,6 +63,7 @@ D = normalized time when autocorrelation drops to 10% of peak
 Combine harmonically
 R = ( S · (1 − H) · (1 − D) )^(1/3)
 
+
 ⚡️ PRO / SDK Edition
 The RSM-Ping PRO Edition extends Open with:
 
@@ -73,6 +74,7 @@ Structured JSON export for ROC / ISM-X
 SDK hooks for adaptive agents & network analytics
 
 Optional Harmonic Logs (audit & provenance)
+
 
 For collaboration or licensing inquiries:
 📧 zakelj.damjan@gmail.com
