@@ -26,11 +26,9 @@ When the system reaches a *resonant stillness*, latency variations become cohere
 pip install rsm_ping
 or from a local clone:
 
-bash
-Copy code
 pip install -r requirements.txt
 python rsm_ping.py --host 8.8.8.8 --count 150 --threshold 0.01 --plot 1
-
+```
 Dependencies
 
 numpy
@@ -40,19 +38,17 @@ matplotlib
 🚀 Quick Examples
 Real network measurement
 
-bash
-Copy code
+```bash
 rsm-ping --host 8.8.8.8 --count 150 --threshold 0.01 --adaptive 1 --plot 1
 Synthetic resonance mode
 
-bash
-Copy code
 rsm-ping --mode synthetic --simulate resonant --count 200 --threshold 0.01 --plot 1
 Outputs
 
 results/*.csv — latency + metric summary
 
 results/*.png — 4-panel chart: RTT, jitter variance, H/D evolution, R score
+```
 
 🧠 Method (in short)
 Compute jitter variance and stillness
